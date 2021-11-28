@@ -8,7 +8,8 @@ namespace OsAlgo
         static void Main(string[] args)
         {
             //FCFS.Calculate();
-            SJF.Calculate();
+            //SJF.Calculate();
+            Priority.Calculate();
         }
     }
 }

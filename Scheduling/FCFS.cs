@@ -4,6 +4,7 @@ namespace OsAlgo.Scheduling
 {
     public class FCFS
     {
+        //Experimenting First Come First Serve Scheduling
         public static void Calculate()
         {
             int[] burst_time, turnAroundTime, waitingTime;
@@ -15,12 +16,14 @@ namespace OsAlgo.Scheduling
             turnAroundTime = new int[numberOfProcess];
             waitingTime = new int[numberOfProcess];
 
+            //Taking input
             for (i=0; i<numberOfProcess; i++)
             {
                 Write($"P-{i + 1} burst time: ");
                 burst_time[i] = int.Parse(ReadLine());
             }
             
+            //Finding turnaround and waiting time
             for (i=0; i< numberOfProcess; i++)
             {
                 totalBtime += burst_time[i];
@@ -32,6 +35,7 @@ namespace OsAlgo.Scheduling
             avgWtime = (float)totalWTime / numberOfProcess;
             avgTtime = (float)totalTtime / numberOfProcess;
 
+            //Printing result
             WriteLine("Process Burst Waiting Turnaround");
             for (i = 0; i < numberOfProcess; i++){
                 WriteLine($"P-{i + 1} \t {burst_time[i]} \t {waitingTime[i]} \t {turnAroundTime[i]}");

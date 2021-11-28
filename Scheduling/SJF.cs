@@ -4,10 +4,10 @@ namespace OsAlgo.Scheduling
 {
     public class SJF
     {
-        static Process[] process;
-
+        //Experimenting Shortest Job First Scheduling
         public static void Calculate()
         {
+            Process[] process;
             int i, j, totalBurst = 0, totalTtime = 0, totalWtime = 0 ;
             float avgWtime = 0, avgTtime = 0;
             Write("Enter the number of process: ");
@@ -22,7 +22,7 @@ namespace OsAlgo.Scheduling
                 process[i].Burst = int.Parse(ReadLine());
             }
 
-            //Sort by burst time;
+            //Sort by burst time using selection sort;
             for(i=0; i<numOfProcess; i++)
             {
                 for(j=i+1; j<numOfProcess; j++)
@@ -36,6 +36,7 @@ namespace OsAlgo.Scheduling
                 }
             }
 
+            //finding turnaround and waiting time
             for(i=0; i<numOfProcess; i++)
             {
                 totalBurst += process[i].Burst;
@@ -49,6 +50,7 @@ namespace OsAlgo.Scheduling
             avgWtime = (float)totalWtime / numOfProcess;
             avgTtime = (float)totalTtime / numOfProcess;
 
+            //Printing result
             WriteLine("Process Burst Waiting Turnaround");
             for (i = 0; i < numOfProcess; i++)
             {
