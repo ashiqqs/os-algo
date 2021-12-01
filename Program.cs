@@ -9,7 +9,8 @@ namespace OsAlgo
         {
             //FCFS.Calculate();
             //SJF.Calculate();
-            Priority.Calculate();
+            //Priority.Calculate();
+            RR.Calculate();
         }
     }
 }
